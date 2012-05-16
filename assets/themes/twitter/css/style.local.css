@@ -197,6 +197,10 @@ code {
 }
 
 
+#tagCanvasContainer {
+    text-align: center;
+}
+
 .twtr-hd {
     display: none;
 }

@@ -5,7 +5,7 @@
 
   function OnLoad() {
     // Create a search control
-    var searchControl = new google.search.SearchControl();
+    var searchControl = new google.search.SearchForm(false, document.getElementById("search"));
 
     // Add in a WebSearch
     var webSearch = new google.search.WebSearch();

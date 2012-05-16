@@ -12,6 +12,8 @@
     <![endif]-->
       <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
 
+      <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery-1.7.2.min.js"></script>
+      <script type="text/javascript" src="{{ ASSET_PATH }}/js/tagcanvas.js"></script>
       {% include google_ajax_search.html %}
     <!-- Le styles -->
       <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -69,10 +71,14 @@
 
             {% unless page.tags == empty or page.tags == nil%}
               <h4>Tags</h4>
-              <ul class="tag_box">
-              {% assign tags_list = page.tags %}
-              {% include JB/tags_list %}
-              </ul>
+              <div id="tagCanvasContainer">
+              <canvas id="tagCanvas" width="193" height="193" >
+                  <ul class="tag_box">
+                  {% assign tags_list = page.tags %}
+                  {% include JB/tags_list %}
+                  </ul>
+              </canvas>
+              </div>
             {% endunless %}
           </div>
           {% endunless %}
@@ -116,7 +122,6 @@
       </div>
 
       <footer>
-
           <ul class="nav">
               {% assign pages_list = site.pages %}
               {% assign group = 'navigation' %}
@@ -130,6 +135,23 @@
 
     </div> <!-- /container -->
 
+    <script type="text/javascript">
+//        $(document).ready(function() {
+           if( ! $('#tagCanvas').tagcanvas({
+             textColour : '#08c',
+             outlineThickness : 1,
+             maxSpeed : 0.05,
+             depth : 0.75,
+             zoom : 0.90,
+             wheelZoom: false,
+             weightMode: 'both'
+           })) {
+             // TagCanvas failed to load
+             $('#tagCanvasContainer').hide();
+           }
+           // your other jQuery stuff here...
+//         });
+    </script>
     {% include JB/analytics %}
   </body>
 </html>
