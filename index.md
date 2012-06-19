@@ -1,6 +1,6 @@
 ---
 layout: index
-title: Hello World!
+title: Yannis Mazzer's Website 
 tagline: Supporting tagline
 ---
 {% include JB/setup %}

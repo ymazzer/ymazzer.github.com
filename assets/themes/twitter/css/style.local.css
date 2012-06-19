@@ -7,12 +7,27 @@ body {
 }
 
 #search {
+ /*   float: right;
+    margin-right: 3%;
+    display: inline-block;
+    vertical-align: top;*/
+    padding-top: 6px;
+    height: 34px;
+    padding-right: 1%;
+    width: 100%;
+}
+
+#search-panel {
+    display: none;
+}
+
+#searchForm {
     float: right;
     margin-right: 3%;
     display: inline-block;
     vertical-align: top;
     padding-top: 6px;
-    height: 34px;
+    height: 14px;
     padding-right: 1%;
     width: 20%;
 }
@@ -110,7 +125,6 @@ body {
 
 #sidebar {
     display: inline-block;
-    clear: both;
     float: right;
     vertical-align: top;
     width: 20%;
@@ -162,6 +176,7 @@ div.article {
 }
 
 .container footer {
+    clear: both;
     margin-top: 20px;
     border-top: 1px dashed black;
     margin-left: 5%;

@@ -41,7 +41,8 @@
             <li><a href="/gsoc.hml">GSoC 2011</a></li>
           </ul>
         </div>
-        <div id="search"></div>
+          <div id="searchForm">
+          </div>
       </div>
     </div>
 
@@ -52,11 +53,12 @@
       </div>
 
       <div id="sidebar">
-          <div id="search-results" class="sidebar">
+          <div id="search-panel" class="sidebar">
               <div class="page-header">
                   <h1>Search Results</h1>
               </div>
 
+              <div id="search-results"></div>
           </div>
           {% unless (page.date == empty or page.date == nil) and (page.tags == empty or page.tags == nil) %}
           <div id="about-page" class="sidebar">

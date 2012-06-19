@@ -28,7 +28,7 @@ apache2 and vim to host Tomcat6, and Jasig CAS 3.4.2.
 First download on your linux distribution (On my installation, I put those two
 tarballs in `/opt/` directory):
 
-    # cd /opt 
+    # cd /opt
 
 - last final release tarball of Jasig CAS at this address : <http://www.jasig.org/cas/download>
     
