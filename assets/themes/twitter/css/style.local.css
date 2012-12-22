@@ -3,8 +3,34 @@ html {
 }
 
 body {
+    font-family: "Open Sans", Helvetica, sans-serif;
     background: transparent;
+    background-image: url(../img/noise.jpg);
+    font-size: 12px;
 }
+
+h1 {
+    font-size: 28px;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+h2 {
+    font-size: 23px;
+    line-height: 36px;
+}
+
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+
 
 #search {
  /*   float: right;
@@ -32,53 +58,61 @@ body {
     width: 20%;
 }
 
+.nav {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.nav li a {
+    color: #999;
+}
+
+.nav li a:hover {
+    background: none;
+    color: #F2F2F2;
+}
+
 .navbar {
     border-bottom: 1px solid gray;
-    min-width: 940px;
+    margin-bottom:0;
 }
 
-.navbar-inner {
-    background-image: -moz-linear-gradient(top, #234,#012);
-    background-image: -ms-linear-gradient(top, #234,#012);
-    background-image: -o-linear-gradient(top, #234,#012);
-    background-image: -webkit-linear-gradient(top, #234,#012);
-    background-image: linear-gradient(top, #234,#012);
+.main-header {
     border-radius: 0;
-    padding: 0;
-}
+    border: none;
+    vertical-align: middle;
 
-.navbar .nav {
-    float: right;
-    left: auto;
-    margin-right: 0;
-    padding-right: 0;
-}
-
-.navbar-inner .container {
-    display: inline-block;
-    vertical-align: top;
-    width: 67%;
-    margin-left: 3%;
-    min-width: 650px;
-    padding-left: 1%;
-    padding-right: 1%;
-    border-radius: 0 0;
     background-image: url(../img/logo_site.png), -moz-linear-gradient(top, #234,#012);
     background-image: url(../img/logo_site.png), -ms-linear-gradient(top, #234,#012);
     background-image: url(../img/logo_site.png), -o-linear-gradient(top, #234,#012);
     background-image: url(../img/logo_site.png), -webkit-linear-gradient(top, #234,#012);
     background-image: url(../img/logo_site.png), linear-gradient(top, #234,#012);
-    background-position: 50%;
+    background-position: 37%;
     background-repeat: no-repeat;
-    margin-right: 0;
+}
+
+.brand-container {
+    padding-top: 10px;
+}
+
+.main-header a.brand {
+    /*font-weight: bold;*/
+    /*font-family: "Yanone Kaffeesatz";*/
+    font-variant: small-caps;
+    color: white;
+    text-shadow: 0;
+    font-size: 1.2em;
+    margin-top: 6px;
+}
+
+.main-header a.brand:hover {
+    text-decoration: none;
 }
 
 .container {
-    width: 100%;
-    min-width: 940px;
 }
 
-.container.main {
+.container-fluid.main {
     background-image: -moz-radial-gradient(50% 10%,rgba(10, 20, 30, 0.1),rgba(20, 30, 40, 0));
     background-image: -ms-radial-gradient(50% 10%,rgba(10, 20, 30, 0.1),rgba(20, 30, 40, 0));
     background-image: -o-radial-gradient(50% 10%,rgba(10, 20, 30, 0.1),rgba(20, 30, 40, 0));
@@ -87,20 +121,14 @@ body {
 }
 
 .row {
-    margin-left: 0;
     text-align: center;
 }
 
 .content {
-    display: inline-block;
-    vertical-align: top;
-    width: 67%;
-    min-width: 650px;
-    margin-left: 3%;
-    padding: 1%;
     box-shadow: 0 3px 10px #333;
     background-color: white;
     color: black;
+    padding: 0 1% 1% 1%;
 }
 
 .content .page-header {
@@ -110,11 +138,11 @@ body {
     background: -o-linear-gradient(top, whiteSmoke, white);
     background: -webkit-linear-gradient(top, whiteSmoke, white);
     background: linear-gradient(top, whiteSmoke, white);
-    text-shadow: 1px 1px #CCC;
-    padding-top: 10px;
+    text-shadow: 2px 2px #f2f2f2;
     color: whiteSmoke;
     text-align: center;
-    margin: -1.5% 0 20px 0;
+    margin-top: 0;
+    padding-bottom: 0;
 }
 
 .content .page-header h1 {
@@ -124,23 +152,16 @@ body {
 }
 
 #sidebar {
-    display: inline-block;
-    float: right;
-    vertical-align: top;
-    width: 20%;
-    padding: 1%;
-    margin-right: 3%;
-    margin-top: -1%;
 }
 
 .sidebar {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 0 0 6px 6px;
-    padding: 1%;
     box-shadow: 0 3px 10px #333;
     background-color: white;
     color: black;
-    margin-bottom: 5%;
+    margin-bottom: 30px;
+    padding: 0 1% 1% 1%;
 }
 
 .sidebar .page-header {
@@ -150,11 +171,11 @@ body {
     background: -o-linear-gradient(top, whiteSmoke, white);
     background: -webkit-linear-gradient(top, whiteSmoke, white);
     background: linear-gradient(top, whiteSmoke, white);
-    text-shadow: 1px 1px #CCC;
-    padding-top: 10px;
+    text-shadow: 2px 2px #f2f2f2;
     color: whiteSmoke;
     text-align: center;
-    margin: -1% 0 10px 0;
+    margin: 0 0 10px 0;
+    padding-bottom: 0;
 }
 
 .sidebar .page-header h1 {
@@ -164,29 +185,18 @@ body {
 }
 
 footer .nav li {
-    display: inline-block;
 }
 
 div.article {
     text-align: justify;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    min-width: 635px;
 }
 
-.container footer {
-    clear: both;
+footer {
     margin-top: 20px;
-    border-top: 1px dashed black;
-    margin-left: 5%;
-    margin-right: 5%;
-    color: black;
     padding-top: 1%;
-}
-
-.container footer .nav {
-    display: none;
+    border-top: 1px dashed black;
+    color: black;
+    text-align: center;
 }
 /*a {*/
     /*color: #cc3333;*/

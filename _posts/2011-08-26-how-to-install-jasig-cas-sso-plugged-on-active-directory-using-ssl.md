@@ -96,7 +96,7 @@ First, we'll need to write a simple configuration file for openssl :
 
 Write out to openssl.cnf and issue the following command :
 
-    # openssl req -new -nodes -out req.pem -config ./openssl.cnf 
+    # openssl req -new -nodes -out req.pem -config ./openssl.cnf
 
 Fill the Common Name with the domain name or the ip adress of the server for
 which you want to obtain a certificate.
@@ -210,6 +210,7 @@ connecting using lecteur as a password.
         </property>
     </bean>
     ...
+
 Now that you have configured your CAS installation you have to build it. Since
 it is a final release we can skip the tests :
 
