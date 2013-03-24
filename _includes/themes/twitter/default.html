@@ -44,21 +44,21 @@
 
     <div class="container-fluid main-header">
         <div class="row-fluid">
-            <div class="span2 brand-container">
+            <div class="span3 brand-container">
                 <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
             </div>
-            <div class="span4 offset3">
+            <div class="span4 offset2">
                   <ul class="nav nav-pills">
                     <li><a href="/index.html">Home</a></li>
                     <li><a href="/cv.html">Curriculum Vitæ</a></li>
-                    <li><a href="/gsoc.hml">GSoC 2011</a></li>
+                    <li><a href="/tags.html#gsoc-ref">GSoC 2011</a></li>
                   </ul>
             </div>
-            <div class="span3">
-                <form class="navbar-search form-search pull-right">
+            <div id="searchFormContainer" class="span3">
+                <form id="searchForm" class="navbar-search form-search pull-right">
                     <div class="input-append">
                       <input type="text" class="search-query" placeholder="Search" />
-                      <button type="submit" class="btn"><i class="icon-search"></i></button>
+                      <button type="submit" id="searchSubmit" type="submit" class="btn"><i class="icon-search"></i></button>
                     </div>
                 </form>
             </div>
@@ -79,36 +79,41 @@
                   <h1>Search Results</h1>
               </div>
 
-              <div id="search-results"></div>
+              <div id="search-results" class="page"></div>
+              <div id="googleBranding" class="branding"></div>
           </div>
           {% unless (page.date == empty or page.date == nil) and (page.tags == empty or page.tags == nil) %}
           <div id="about-page" class="sidebar">
               <div class="page-header">
                   <h1>About the article</h1>
               </div>
-            {% unless page.date == empty or page.date == nil %}
-              <h4>Published</h4>
-              <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
+              <div class="page">
+                {% unless page.date == empty or page.date == nil %}
+                  <h4>Published</h4>
+                  <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
 
-            {% endunless %}
+                {% endunless %}
 
-            {% unless page.tags == empty or page.tags == nil%}
-              <h4>Tags</h4>
-              <div id="tagCanvasContainer">
-              <canvas id="tagCanvas" width="193" height="193" >
-                  <ul class="tag_box">
-                  {% assign tags_list = page.tags %}
-                  {% include JB/tags_list %}
-                  </ul>
-              </canvas>
+                {% unless page.tags == empty or page.tags == nil%}
+                  <h4>Tags</h4>
+                  <div id="tagCanvasContainer">
+                  <canvas id="tagCanvas" width="193" height="193" >
+                      <ul class="tag_box">
+                      {% assign tags_list = page.tags %}
+                      {% include JB/tags_list %}
+                      </ul>
+                  </canvas>
+                  </div>
+                {% endunless %}
               </div>
-            {% endunless %}
           </div>
           {% endunless %}
           <div id="about-me" class="sidebar">
             <div class="page-header">
                 <h1>About Me</h1>
             </div>
+              <div class="page">
+              </div>
           </div>
           <div id="twitter-stream" class="sidebar">
             <div class="page-header">
@@ -126,11 +131,11 @@
                 theme: {
                   shell: {
                     background: 'transparent',
-                    color: '#def'
+                    color: '#000'
                   },
                   tweets: {
                     background: 'transparent',
-                    color: '#def'
+                    color: '#000'
                   }
                 },
                 features: {

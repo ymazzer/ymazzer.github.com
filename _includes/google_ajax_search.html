@@ -1,17 +1,37 @@
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script language="Javascript" type="text/javascript">
 
+
+
     google.load("search", "1", {language:'en', style:google.loader.themes.MINIMALIST});
 
-    function showSearchPanel() {
+    var searchControl;
+
+    function showSearchResults(e) {
+        var value = $("#searchForm .search-query").val();
+        searchControl.execute(value);
         $("#search-panel").show();
+        e.preventDefault();
     }
 
 
-    function OnLoad() {
-        // Create a search control
-        var searchControl = new google.search.SearchControl();
 
+    // called on form submit
+//    function newSearch(form) {
+//      if (form.input.value) {
+//        this.searchControl.execute(form.input.value);
+//      }
+//      return false;
+//    }
+
+    function OnLoad() {
+
+        // create a search form without a clear button
+        // bind form submission to my custom code
+
+        // Create a search control
+
+        searchControl = new google.search.SearchControl();
         // Add in a WebSearch
         var webSearch = new google.search.WebSearch();
 
@@ -20,23 +40,25 @@
         options.setRoot(document.getElementById("search-results"));
 
         var drawOptions = new google.search.DrawOptions();
-        drawOptions.setDrawMode(google.search.SearchControl.DRAW_MODE_TABBED);
+        drawOptions.setDrawMode(google.search.SearchControl.DRAW_MODE_LINEAR);
 
         searchControl.addSearcher(webSearch, options);
 
-        searchControl.setSearchCompleteCallback(this, showSearchPanel);
+
+        searchControl.draw();
 
         // Restrict our search to pages from this site
-        webSearch.setSiteRestriction('http://ymazzer.github.com');
+        webSearch.setSiteRestriction('http://yannis.mazzer.info');
 
-        // tell the searcher to draw itself and tell it where to attach
-        searchControl.draw(document.getElementById("searchForm"), drawOptions);
+        var branding = google.search.Search.getBranding(document.getElementById("googleBranding"));
 
-        $("#searchForm .gsc-clear-button").click(
-                function () {
-                    $("#search-panel").hide();
-                }
-        );
+
+        $("#searchSubmit").click(
+                showSearchResults
+        )
+        $("#searchForm").submit(
+                showSearchResults
+        )
     }
     google.setOnLoadCallback(OnLoad);
 
