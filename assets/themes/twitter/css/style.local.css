@@ -26,7 +26,6 @@ h4 {
 }
 
 
-
 #search {
  /*   float: right;
     margin-right: 3%;
@@ -72,7 +71,7 @@ h4 {
     background-image: url(../img/logo_site.png), -o-linear-gradient(top, #234,#012);
     background-image: url(../img/logo_site.png), -webkit-linear-gradient(top, #234,#012);
     background-image: url(../img/logo_site.png), linear-gradient(top, #234,#012);
-    background-position: 37%;
+    background-position: top left;
     background-repeat: no-repeat;
 }
 
@@ -87,17 +86,16 @@ h4 {
     color: white;
     text-shadow: 0;
     font-size: 1.2em;
-    margin-top: 6px;
+    margin: 0 0 0 60px;
+    padding: 0;
 }
 
 .main-header a.brand:hover {
     text-decoration: none;
 }
 
-.container {
-}
-
 .container-fluid.main {
+    margin-top: 38px;
     background-image: -moz-radial-gradient(50% 10%,rgba(10, 20, 30, 0.3),rgba(20, 30, 40, 0.1));
     background-image: -ms-radial-gradient(50% 10%,rgba(10, 20, 30, 0.3),rgba(20, 30, 40, 0.1));
     background-image: -o-radial-gradient(50% 10%,rgba(10, 20, 30, 0.3),rgba(20, 30, 40, 0.1));
@@ -277,4 +275,22 @@ code {
 .gs-spelling a:hover {
     color: #005580;
     text-decoration: underline;
+}
+
+.navbar .btn-navbar {
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+
+
+@media(max-width: 979px) {
+    #searchForm {
+        display: none;
+    }
+    .container-fluid.main {
+        margin-top: 0;
+        background-image: none;
+        background: transparent;
+    }
 }
